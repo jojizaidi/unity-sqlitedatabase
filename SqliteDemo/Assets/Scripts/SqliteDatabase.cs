@@ -94,12 +94,12 @@ public class SqliteDatabase
 	public SqliteDatabase (string dbName)
 	{
 
-        //pathDB = System.IO.Path.Combine(Application.persistentDataPath, dbName);
+        pathDB = System.IO.Path.Combine(Application.persistentDataPath, dbName);
 		
 		//original path
 		string sourcePath = System.IO.Path.Combine (Application.streamingAssetsPath, dbName);
 
-        pathDB = sourcePath;
+        //pathDB = sourcePath;
 
         //if DB does not exist in persistent data folder (folder "Documents" on iOS) or source DB is newer then copy it
         if (!System.IO.File.Exists (pathDB) || (System.IO.File.GetLastWriteTimeUtc(sourcePath) > System.IO.File.GetLastWriteTimeUtc(pathDB))) {
